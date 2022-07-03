@@ -1,0 +1,114 @@
+
+<ItemLabel@Label>:
+    font_size: '25sp'
+    haline: 'left'
+    valign: 'middle'
+    text_size: self.size
+
+<Container>:
+    rows: 6
+
+    a_input: a_input
+    b_input: b_input
+    c_input: c_input
+    result_a: result_a
+    result_m: result_m
+    result_n: result_n
+
+    AnchorLayout:
+        size_hint: 1, 1
+        rows:3
+
+        GridLayout:
+            rows: 3
+
+            FloatLayout:
+                TextInput:
+                    id: a_input
+                    font_size: '45sp'
+                    pos_hint: {'top': 1}
+                    multiline: False
+                    input_type: 'number'
+                    input_filter: 'int'
+                    font_size: 40
+
+            FloatLayout:
+                TextInput:
+                    id: b_input
+                    font_size: '45sp'
+                    pos_hint: {'top': 1}
+                    multiline: False
+                    input_type: 'number'
+                    input_filter: 'int'
+                    font_size: 40
+
+            FloatLayout:
+                TextInput:
+                    id: c_input
+                    font_size: '45sp'
+                    pos_hint: {'top': 1}
+                    multiline: False
+                    input_type: 'number'
+                    input_filter: 'int'
+                    font_size: 40
+
+    GridLayout:
+        cols: 2
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: [30, 0, 0, 0]
+            ItemLabel:
+                text: 'Номінальна вага'
+
+            ItemLabel:
+                text: 'Мінімальна вага'
+
+            ItemLabel:
+                text: 'Максимальна вага'
+
+        BoxLayout:
+
+            text_size: self.size
+            orientation: 'vertical'
+            padding: [30, 0, 0, 0]
+            size_hint: 1, 1
+
+            ItemLabel:
+                id: result_a
+                text: '0'
+
+            ItemLabel:
+                id: result_m
+                text: '0'
+
+            ItemLabel:
+                id: result_n
+                text: '0'
+
+    BoxLayout:
+        size_hint: 0.9, 0.5
+        padding: [30, 0, 30, 20]
+
+        Button:
+            #size_hint: 0.5, 0.4
+            pos_hint: {'center_x': 0.5, 'y': 0.1}
+            text: 'Розрахувати'
+
+            on_release:
+                root.calculate()
+
+#    BoxLayout:
+#        size_hint: 0.9, 0.5
+ #       padding: [30, 0, 30, 20]
+  #      Button:
+   #         #size_hint: 0.5, 0.4
+    #        pos_hint: {'center_x': 0.5, 'y': 0.1}
+     #       text: 'SinglePack'
+   # BoxLayout:
+    #    size_hint: 0.9, 0.5
+     #   padding: [30, 0, 30, 20]
+      #  Button:
+       #     #size_hint: 0.5, 0.4
+        #    pos_hint: {'center_x': 0.5, 'y': 0.1}
+         #   text: 'MultiPack'
